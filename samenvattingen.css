@@ -4,7 +4,7 @@ html {
 body {
 	height: 100%;
 	overflow: hidden;
-	background-color: lightgray;
+	background-color: #D3D3D3;
 	margin: 0;
 	padding: 0;
 	font-family: arial bold;
@@ -20,38 +20,30 @@ a {
 	color: black;
 	text-decoration-color: black;
 }
-h1 {
+h2 {
 	text-decoration-line: underline;
 	font-weight: bold;
-}
-.pic1 {
-	position: absolute;
-	height: 45%;
-	margin-left: 1%;
-}
-.pic2 {
-	position: absolute;
-	margin-left: 81%; 
-	height: 45%;
 }
 .txt {
 	width: 60%;
 	margin-top: 3%;
 	margin-left: 20%;
 	margin-right: 20%;
-	font-size: 2vw;
+	font-size: 1.5vmax;
+	overflow-y: auto;
 }
 .home {
 	height: 45%;
 	border-radius: 5px;
 	margin-bottom: 1%;
-	background-color: lightgray;
+	background-color: #D3D3D3;
 	border: 1px solid black;
-	-webkit-box-shadow: 1px 2px 58px -10px rgba(0,0,0,0.59);
-	-moz-box-shadow: 1px 2px 58px -10px rgba(0,0,0,0.59);
-	box-shadow: 1px 2px 58px -10px rgba(0,0,0,0.59);
+	-webkit-box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.45);
+	-moz-box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.45);
+	box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.45);
 }
 .obj {
+	background-color: #D3D3D3;
 	height: 35%;
 	margin-top: 3%;
 	margin-right: 3.35%;
@@ -59,7 +51,8 @@ h1 {
 }
 .txtMobile {
 	margin-top: 5%;
-	font-size: 2vh;
+	font-size: 2.1vmax;
+	overflow-y: auto;
 }
 .homeMobile {
 	height: 45%;
@@ -67,11 +60,11 @@ h1 {
 	margin-left: 3.35%;
 	margin-right: 3.35%;
 	margin-bottom: 1%;
-	background-color: lightgray;
+	background-color: #D3D3D3;
 	border: 1px solid black;
-	-webkit-box-shadow: 1px 2px 58px -10px rgba(0,0,0,0.59);
-	-moz-box-shadow: 1px 2px 58px -10px rgba(0,0,0,0.59);
-	box-shadow: 1px 2px 58px -10px rgba(0,0,0,0.59);
+	-webkit-box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.45);
+	-moz-box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.45);
+	box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.45);
 }
 .objMobile {
 	height: 45%;
@@ -89,15 +82,15 @@ h1 {
 	height: 100%;	
 	float: left;
 	width: 7%;
-	font-size: 18px;
+	font-size: 1.75vmax;
 	border: 1px solid black;
 	box-shadow: 9px 1px 56px -20px rgba(0,0,0,0.75);
 	font-weight: bold;
 	text-decoration: none;
-	background-color: lightgrey;
+	background-color: #D3D3D3;
 }
 .pdf {
-	background-color: lightgrey;
+	background-color: #D3D3D3;
 	float: right;
 	display: inline-block;
 	height: 100%;
@@ -110,7 +103,7 @@ h1 {
 	z-index: 2;
 	top: 1;
 	left: 0;
-	background-color: lightgray;
+	background-color: #D3D3D3;
 	overflow-x: hidden;
 	padding-top: 60px;
 	transition: 0.5s;
@@ -150,7 +143,7 @@ h1 {
 }
 .popup_content {
 	text-decoration: none;
-	background-color: lightgray;
+	background-color: #D3D3D3;
 	margin: 15% auto;
 	padding: 20px;
 	border: 1px solid black;

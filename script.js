@@ -18,157 +18,116 @@ var isMobile = {
     any: function() {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
-};
-
+}
 function openNav() {
-		document.getElementById("navBar").style.width = "250px";
-		document.getElementById("navBar").style.fontSize = "25px";
+	$("#navBar").css({
+		"width": "250px",
+		"font-size": "2vmax"
+	});
 };
 function closeNav() {
-		document.getElementById("navBar").style.width = "0";
+	$("#navBar").css({"width": "0"});
 };
-function summ_aard() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_aard.pdf');
-			closeNav();
-			closeAard();		
-};
-function summ_bio() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_bio.pdf');
-			closeNav();
-			closeBio();		
-};
-function summ_chem_atom() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_chem_atom.pdf');
-			closeNav();
-			closeChem();		
-};
-function summ_chem_even() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_chem_even.pdf');
-			closeNav();
-			closeChem();		
-};
-function summ_eng_u3_4() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_eng_u3_4.pdf');
-			closeNav();
-			closeEng();	
-};
-function summ_frans_pronom() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_frans_pronom.pdf');
-			closeNav();
-			closeFrans();	
-};
-function summ_fys() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_fys.pdf');
-			closeNav();
-			closeFys();		
-};
-function summ_strijd() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_strijd.pdf');
-			closeNav();
-			closeGesch();		
-};
-function summ_wisk_complex() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_wisk_complex.pdf');
-			closeNav();
-			closeWisk();		
-};
-function summ_wisk_funct() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_wisk_funct.pdf');
-			closeNav();
-			closeWisk();	
-};
-function summ_wisk_gon() {
-		var objData = document.getElementById('pdf');
-			objData.setAttribute('data', 'https://docs.google.com/gview?embedded=true&url=https://stepantaz.github.io/summ_wisk_gon.pdf');
-			closeNav();
-			closeWisk();		
+function openSumm(summ, mobileSumm) {
+		if (isMobile.any()) {
+        	$("#pdf").attr("data", mobileSumm);
+        }
+        else {
+        	$("#pdf").attr("data", summ);
+        }    
+        closeNav();
+        closeAll();
 };
 function home() {
 	if (isMobile.any()) {
-		objData = document.getElementById('pdf')
-		objData.setAttribute('data', 'homeMobile.html');
-		}
-		else {
-		objData = document.getElementById('pdf')
-		objData.setAttribute('data', 'home.html');
-		}
+		$("#pdf").attr("data", "homeMobile.html");
+	}
+	else {
+		$("#pdf").attr("data", "home.html");
+	}
 	closeNav();
+	closeAll();
+};
+function show(vak) {
+	$(vak).fadeIn(200);
+};
+function closeInner(vak) {
+	$(vak).fadeOut(200);
+};
+function closeAll() {
+        closeInner('#aard');
+        closeInner('#wisk'); 
+        closeInner('#bio');
+        closeInner('#chem');
+        closeInner('#eng');
+        closeInner('#frans');
+        closeInner('#fys');
+        closeInner('#gesch');
+		closeInner('#ned');
 }
-function aard() {
-	document.getElementById('aard').style.display = "block";
-}
-function bio() {
-	document.getElementById('bio').style.display = "block";
-}
-function eng() {
-	document.getElementById('eng').style.display = "block";
-}
-function chem() {
-	document.getElementById('chem').style.display = "block";
-}
-function frans() {
-	document.getElementById('frans').style.display = "block";
-}
-function fys() {
-	document.getElementById('fys').style.display = "block";
-}
-function gesch() {
-	document.getElementById('gesch').style.display = "block";
-}
-function wisk() {
-	document.getElementById('wisk').style.display = "block";
-}
-function closeAard() {
-	document.getElementById('aard').style.display = "none";
-}
-function closeBio() {
-	document.getElementById('bio').style.display = "none";
-}
-function closeChem() {
-	document.getElementById('chem').style.display = "none";
-}
-function closeEng() {
-	document.getElementById('eng').style.display = "none";
-}
-function closeFys() {
-	document.getElementById('fys').style.display = "none";
-}
-function closeFrans() {
-	document.getElementById('frans').style.display = "none";
-}
-function closeGesch() {
-	document.getElementById('gesch').style.display = "none";
-}
-function closeWisk() {
-	document.getElementById('wisk').style.display = "none";
-}
+function close() {
+	closeAll();
+};
+$(document).click(function(event) { 
+    if(!$(event.target).closest('#wisk').length == 0) {
+        if($('#wisk').is(":visible")) {
+            closeAll();
+        }
+    } 
+    if(!$(event.target).closest('#aard').length == 0) {
+        if($('#aard').is(":visible")) {
+            closeAll();
+        }
+    }
+    if(!$(event.target).closest('#gesch').length == 0) {
+        if($('#gesch').is(":visible")) {
+            closeAll();
+        }
+    }
+    if(!$(event.target).closest('#bio').length == 0) {
+        if($('#bio').is(":visible")) {
+            closeAll();
+        }
+    }
+    if(!$(event.target).closest('#ned').length == 0) {
+        if($('#ned').is(":visible")) {
+            closeAll();
+        }
+    }
+    if(!$(event.target).closest('#fys').length == 0) {
+        if($('#fys').is(":visible")) {
+            closeAll();
+        }
+    }
+    if(!$(event.target).closest('#chem').length == 0) {
+        if($('#chem').is(":visible")) {
+            closeAll();
+        }
+    }
+    if(!$(event.target).closest('#frans').length == 0) {
+        if($('#frans').is(":visible")) {
+            closeAll();
+        }
+    }
+    if(!$(event.target).closest('#eng').length == 0) {
+        if($('#eng').is(":visible")) {
+            closeAll();
+        }
+    }      
+});
 function mobile() {
 	if (isMobile.any()) {
-		var popupContent = document.getElementsByClassName('popup_content');
-		var navList = document.getElementsByClassName('navList');
-		var home = document.getElementsByClassName('home');
-		var txt = document.getElementsByClassName('txt');
-		for (var i = 0; i < popupContent.length; i++) {
-			//alert("MOBILE");
-			popupContent[i].style.width = "80%";
-			popupContent[i].style.height = "80%";
-			popupContent[i].style.fontSize = "20px";
-			popupContent[i].style.marginTop = '10%';
-		}
-		for (var i = 0; i < navList.length; i++) {
-			navList[i].style.fontSize = "20px";
-		}
-		objData = document.getElementById('pdf')
-		objData.setAttribute('data', 'homeMobile.html');
-	}
-}
+		$(document).ready(function(){
+			$(".popup_content").css({
+				"width": "80%",
+				"height": "80%",
+				"font-size": "20px",
+				"margin-top": "10%"
+			});
+			$(".navList").css({
+				"font-size": "20px"
+			});
+			$("#pdf").attr("data", "homeMobile.html");
+		});
+	};
+};
